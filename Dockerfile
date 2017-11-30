@@ -3,9 +3,10 @@ FROM centos
 RUN yum -y install openssl openssl-devel
 RUN yum -y install pcre-devel
 RUN yum install -y zlib-devel
-RUN yum install gcc-c++
+RUN yum -y install gcc-c++
+RUN yum -y install wget
 
-RUN cd ~
+WORKDIR /root
 
 RUN wget http://nginx.org/download/nginx-1.13.7.tar.gz
 RUN tar -xvf nginx-1.13.7.tar.gz
